@@ -28,7 +28,7 @@ public class BookController {
 	}
 	
 	@GetMapping("/books/{book_id}")
-	public Book getBookByID(@PathVariable(name = "book_id") Long bookID) {
+	public Book getBookByID(@PathVariable(name = "book_id") String bookID) {
 		return bookService.getBookById(bookID);
 	}
 	
@@ -38,16 +38,12 @@ public class BookController {
 	}
 	
 	@DeleteMapping("/books/{book_id}")
-	public String deleteBook(@PathVariable(name = "book_id") Long bookID) {
-		String result = "Delete Unsuccessful";
-		if (bookService.deleteBook(bookID)) {
-			result = "Delete Successful";
-		}
-		return result;
+	public boolean deleteBook(@PathVariable(name = "book_id") String bookID) {
+		return bookService.deleteBook(bookID);
 	}
 	
 	@PutMapping("books/{book_id}")
-	public Book updateBook(@PathVariable(name = "book_id") Long bookID, @RequestBody Book book) {
+	public Book updateBook(@PathVariable(name = "book_id") String bookID, @RequestBody Book book) {
 		return bookService.updateBookDetails(bookID, book);
 	}
 }

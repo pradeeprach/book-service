@@ -19,7 +19,7 @@ public class BookServiceImpl implements BookService {
 		return bookRepository.findAll();
 	}
 
-	public Book getBookById(Long bookID) {
+	public Book getBookById(String bookID) {
 		Book book = null;
 		Optional<Book> optionalBook = bookRepository.findById(bookID);
 		if (optionalBook.isPresent()) {
@@ -32,12 +32,12 @@ public class BookServiceImpl implements BookService {
 		return bookRepository.save(book);
 	}
 
-	public boolean deleteBook(Long bookID) {
+	public boolean deleteBook(String bookID) {
 		bookRepository.deleteById(bookID);
 		return !bookRepository.existsById(bookID);
 	}
 
-	public Book updateBookDetails(Long bookID, Book book) {
+	public Book updateBookDetails(String bookID, Book book) {
 		Book updatedBook = null;
 		if (bookRepository.existsById(bookID) && book.getId().equals(bookID)) {
 			updatedBook = bookRepository.save(book);

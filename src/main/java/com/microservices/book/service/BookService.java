@@ -7,8 +7,8 @@ import com.microservices.book.entity.Book;
 public interface BookService {
 
 	List<Book> getAllBooks();
-	Book getBookById(Long bookID);
+	Book getBookById(String bookID);
 	Book addBook(Book book);
-	boolean deleteBook(Long bookID);
-	Book updateBookDetails(Long bookID, Book book);
+	boolean deleteBook(String bookID);
+	Book updateBookDetails(String bookID, Book book);
 }
