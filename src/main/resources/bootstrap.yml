@@ -3,8 +3,8 @@ spring:
     name: book-service
   cloud:
     config:
-      uri: http://localhost:9999
+      uri: http://host.docker.internal:9999
   data:
     mongodb:
-      uri: mongodb+srv://book-service-user:<password>@cluster0.oh6cj.mongodb.net/book-service?retryWrites=true&w=majority
+      uri: mongodb+srv://book-service-user:bookservice@cluster0.oh6cj.mongodb.net/book-service?retryWrites=true&w=majority
       database: book-service
