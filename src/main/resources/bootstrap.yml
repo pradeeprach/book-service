@@ -8,4 +8,3 @@ spring:
     mongodb:
       uri: mongodb+srv://book-service-user:bookservice@cluster0.oh6cj.mongodb.net/book-service?retryWrites=true&w=majority
       database: book-service
-      
